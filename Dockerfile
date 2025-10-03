@@ -19,4 +19,4 @@ ENV PYTHONUNBUFFERED=1
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Without sh -c, Docker would treat ${HOST} literally, not as a variable
-CMD ["sh","-c","uv alembic upgrade head && uv uvicorn app.main:app --host ${HOST} --port ${PORT}"]
+CMD ["sh","-c","uv run alembic upgrade head && uv run uvicorn app.main:app --host ${HOST} --port ${PORT}"]
